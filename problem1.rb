@@ -6,19 +6,30 @@
 
 # Find the sum of all the multiples of 3 or 5 below 1000.
 
-s = 0
-for c in 0..1000
-  
-  d = c % 3
-  if d == 0
-    puts c
-    s = s + c
-  end
+s = 0 
 
-  e = c % 5
-  if e == 0
-    puts c
-    s = s + c
+for c in 0..1000
+
+  if c < 1000
+  
+    d = c % 3
+    e = c % 5
+
+    if d == 0
+      puts c
+      s = s + c
+    end
+
+    if e == 0
+      puts c
+      s = s + c
+    end
+
+    if d == 0 && e == 0
+      s = s - c
+    end
   end
 end
+puts "-------------"
+
 puts "Total sum is #{s}"
